@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#output {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+    height: 150px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#stats {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#start-game, #play-again {
+    margin-top: 20px;
+}
+
+@keyframes confetti {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes fireworks {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: #FF4136;
+    top: -10px;
+    animation: confetti 2s linear infinite;
+    opacity: 0;
+}
+
+.firework {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FFDC00;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    animation: fireworks 1s ease-out infinite;
+    opacity: 0;
+}
+
+.spinner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #2ECC40;
+    top: 50%;
+    left: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 0;
+}
